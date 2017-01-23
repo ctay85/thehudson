@@ -105,7 +105,7 @@ function initialize() {
     jQuery('#map-filters').on('click', '.catFilter', function () {
         filter = jQuery(this).attr('data-filter-name');
         color = jQuery(this).attr('data-filter-color');
-        jQuery('#neighbourhood-map').css('background',color);
+        //jQuery('#neighbourhood-map').css('background',color);
         jQuery(this).parent().parent().find('.catFilter').css('background','#807d87');
         jQuery(this).css('background',color).parent().find('.content').css('background',color);
 	   jQuery('.catFilter').css('color','#ffffff');

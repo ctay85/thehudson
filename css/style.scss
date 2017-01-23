@@ -1,18 +1,26 @@
 @font-face {
     font-family: "Mercury Display Italic";
-    src: url(../fonts/MercuryDisplayItalic.ttf);
+    src: url(../fonts/MercuryDisplayItalic.eot),
+        url(../fonts/MercuryDisplayItalic.woff),
+        url(../fonts/MercuryDisplayItalic.woff2);
 }
 @font-face {
     font-family: "Gotham Book Italic";
-    src: url(../fonts/GothamBookItalic.ttf);
+    src: url(../fonts/GothamBookItalic.eot),
+        url(../fonts/GothamBookItalic.woff),
+        url(../fonts/GothamBookItalic.woff2),;
 }
 @font-face {
     font-family: "Gotham Book Regular";
-    src: url(../fonts/GothamBookRegular.otf);
+    src: url(../fonts/GothamBookRegular.eot),
+        url(../fonts/GothamBookRegular.woff),
+        url(../fonts/GothamBookRegular.woff2);
 }
 @font-face {
     font-family: "Gotham Medium";
-    src: url(../fonts/GothamMedium.otf);
+    src: url(../fonts/GothamMedium.eot),
+        url(../fonts/GothamMedium.woff),
+        url(../fonts/GothamMedium.woff2);
 }
 @font-face {
     font-family: fa;
@@ -137,6 +145,96 @@ h3 {
 
 
 
+#home,
+#amenities,
+#features {
+
+	.intro {
+		
+		width: 100%;
+
+		h2 {
+			color: $light-orange;
+			border-bottom: 2px solid;
+			display: inline;
+			font-size: 34px;
+			font-family: $gotham-r;
+			text-transform: uppercase;
+			line-height: 1.5;
+			@media (min-width: 768px) and (max-width: 991px) {
+				font-size: 28px;
+			}
+		}
+		.intro-logo {
+			margin: 40px 0 30px;
+			img {
+				margin: auto;
+				@media (min-width: 768px) {
+					max-width: 415px;
+				}
+				@media (min-width: 992px) {
+					max-width: 100%;
+				}
+
+			}
+		}
+		h3 {
+			color: $light-orange;
+			font-family: $mercury-i;
+			font-size: 33px;
+			@media (min-width: 768px) and (max-width: 991px) {
+				font-size: 27px;
+			}
+		}
+	}
+	.intro-desc {
+		background-color: $gray;
+		padding: 55px 0;
+		@media screen and (max-width: 767px) {
+			padding: 28px 0px;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 30px 0 40px;
+		}
+		p {
+			color: #6c6d70;
+		}
+	}
+	.info {
+
+		.img, .description {
+			padding: 0;
+		}
+		.description {
+			margin-top: 50px;
+			.box-text {
+				max-width: 215px;
+				margin: 0 auto; 
+				@media (min-width: 768px) {
+					max-width: 325px;
+				}
+				@media (min-width: 992px) {
+					max-width: 350px;
+				}
+				h3 {
+				}
+			}
+		}
+		img {
+			width: 100%;
+		}
+		h3 {
+			font-family: $mercury-i;
+			font-size: 28px;
+			color: $almost-black;
+			margin-top: 0;
+		}
+		p {
+			color: $almost-black;
+		}
+	}
+}
+
 
 
 /* ################################## HEADER STYLES ################################## */
@@ -198,11 +296,14 @@ header {
 					width: calc(100% - 30px);
 				}
 			}
+			&.active {
+				
+			}
 
 		}
 		>li>a:hover {
 			background-color: transparent;
-			text-decoration: underline; 
+			
 		}
 	}
 	.navbar-brand {
@@ -327,6 +428,13 @@ header {
 				color: #fff;
 			}
 		}
+			tr:nth-child(2) {
+				td:first-child {
+					a {
+						background-color: #6c6d70;
+					}
+				}
+			}
 	}
 }
 
@@ -663,58 +771,155 @@ p {
 			}
 		}
 	}
+
+}
+
+
 	.gallery, #gallery {
 		.row {
-			@media screen and (max-width: 767px) {
-				/*margin: 0;*/
+			@media screen and (min-width: 768px) {
+				margin: 0;
 			}
 		}
 		img {
 			display: block;
 			margin: auto;
 			width: 100%;
-			max-height: 400px;
 			object-fit: cover;
 			object-position: center bottom;
 			transition: all .4s;
-			@media screen and (max-width: 767px) {
-				margin-top: 15px;
-			}
 			&:hover {
 				opacity: .5;
 				transition: all .4s;
 			}
-		}
+		} 
 	}
-}
 
 
 /* ################################## GALLERY PAGE ################################## */
 
 #gallery {
-	padding: 50px 0 90px;
+	padding: 10px 0 30px;
+	@media (min-width: 992px) {
+		padding: 50px 0 90px;
+	}
+	.container {
+	}
 
 	h3 {
+		font-size: 24px;
 		font-family: $mercury-i;
-		font-size: 30px;
+		@media (min-width: 992px) {
+			font-size: 30px;
+		}
+		
 	}
 	p {
-		margin-top: 40px;
-		font-size: 14px;
+		margin: 22px 0px 20px;
+    	font-size: 12px;
+		@media (min-width: 992px) {
+			margin-top: 40px;
+			font-size: 14px;
+		}
+		
 	}
-	.row {
-		margin-top: 15px;
-
-		& > div {
-			padding: 0 7px;
+	a {
+		display: block;
+		margin-bottom: 8px; 
+		@media (min-width: 768px) {
+			margin: 0px;
+			padding: 5px;
+		}
+		img {
+			width: 100%;
+			margin: 0px;
 		}
 	}
+	.gallery {
+		.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+			@media (min-width: 768px) {
+				padding: 0px;
+			}
+		}
+	}
+	
+	
 }
 
 
 
 
 /* ################################## AMENITIES PAGE ################################## */
+
+
+#amenities, #features, #neighborhood, #views, #contact {
+	.intro {
+		padding: 20px 0px 50px;
+		@media (min-width: 992px) {
+			padding: 35px 0 60px;
+		}
+		h2 {
+			font-size: 25px;
+			@media (min-width: 992px) {
+				font-size: 30px;
+			}
+		}
+		h3 {
+			font-size: 24px; 
+			font-family: $mercury-i;
+			@media (min-width: 992px) {
+				font-size: 28px;
+			}
+		}
+	}
+	.info {
+		.description {
+			margin: 0px;
+
+		}
+		.box-text {
+			padding: 40px 0 30px;
+			h3 {
+				font-size: 24px;
+			}
+		}
+	}
+}
+
+#amenities, #features {
+	.info {
+		.description {
+			margin: 0px;
+
+		}
+		.box-text {
+
+			@media (min-width: 768px) and (max-width: 991px) {
+				padding: 15px 15px 0px;
+				max-width: 325px !important; 
+			}
+			h3 {
+				br {
+					@media (min-width: 768px) and (max-width: 991px) {
+						display: none;
+					}
+				}
+			}
+			.hr {
+				@media (min-width: 768px) and (max-width: 991px) {
+					margin: 12px auto;
+				}
+			}
+			p {
+				@media (min-width: 768px) and (max-width: 991px) {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}
+
+
 
 #amenities,
 #features,
@@ -723,7 +928,6 @@ p {
 		background: radial-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)),
 					url(../img/bg.jpg) no-repeat center 93%;
 		background-size: cover;
-		padding: 60px 0 70px;
 	}
 }
 
@@ -737,12 +941,20 @@ p {
 		left: auto;
 		right: 0;
 	}
-	.intro-desc {background-color: #fff;}
+	.intro-desc {
+		background-color: #fff;
+		padding: 30px 0 15px;
+		.box-text {
+			max-width: 375px;
+			margin: 0 auto;
+		}
+	}
 	.info {
 		background-color: #f3f3f3;
 		h3 {
-			@media screen and (min-width: 768px) and (max-width: 991px) {
-				font-size: 24px;
+			font-size: 24px;
+			@media (min-width: 992px) {
+				font-size: 28px !important;
 			}
 		}
 		.info .hr:not(.xs) {
@@ -779,9 +991,17 @@ p {
 }
 
 
+
+/* ################################## FEATURES PAGE ###################################### */
+
+
+
+
 /* ################################## NEIGHBORHOOD PAGE ################################## */
 #neighborhood {
-	padding-top: 50px;
+	.intro {
+		padding-bottom: 20px;
+	}
 	.container {
 		@media screen and (max-width: 767px) {
 			padding: 0;
@@ -793,7 +1013,10 @@ p {
 	.arrow-left {left: -40px;}
 	.arrow-right {right: -40px;}
 	.carousel {
-		margin: 50px 0;
+		margin: 35px 0px 0px;
+		@media (min-width: 992px) {
+			margin: 50px
+		}
 		background-color: #f3f3f3;
 		img {
 			@media screen and (max-width: 767px) {
@@ -801,15 +1024,22 @@ p {
 			}
 		}
 		.description {
-			@media screen and (max-width: 767px) {
-				padding: 35px 0 50px;
+			padding: 10px 0px 65px;
+			@media screen and (min-width: 480px) {
+				padding: 35px 0 30px; 
 				margin-bottom: 30px;
 			}
-			.row {
-				@media screen and (max-width: 767px) {
-					margin: 0;
-				}
+			.box-text {
+			    margin: auto;
+			    text-align: Center;
+			    @media (min-width: 992px) {
+			     max-width: 300px;
+			    }
+			   
 			}
+		}
+		.col-md-6 {
+
 		}
 		
 	}
@@ -841,14 +1071,42 @@ p {
 		font-family: $mercury-i;
 		font-size: 30px;
 	}
+	.info {
+		.description {
+			display: block;
+		}
+		.box-text {
+			padding: 0px;
+		}
+	}
 
 }
 #map {
-	height: 60vh;
 	width: 100%;
+	height: 250px;
+	@media (min-width: 600px) {
+		height: 350px;
+	}
+	@media (min-width: 768px) {
+		height: 450px;
+	}
+	@media (min-width: 992px) {
+		height: 500px;
+	}
+	@media (min-width: 1200px) {
+		height: 600px;
+	}
+	
+	
 }
 .map {
-	margin-top: 50px;
+	margin-top: 20px;
+	@media (min-width: 768px) {
+		margin-top: 35px;
+	}
+	@media (min-width: 992px) {
+		margin-top: 50px;
+	}
 }
 #neighbourhood-map {
 	position: relative;
@@ -903,16 +1161,21 @@ p {
 	}
 }
 #markers {
-	position: absolute;
-	top: 0;
+	
 	background-color: #807d87;
-	right: 0;
-	height: 100%;
-	width: 20vw;
-	overflow: hidden;
-	@media screen and (max-width: 991px) {
+	width: 100%;
+	@media screen and (min-width: 992px) {
 		position: static;
-		width: 100%;
+		position: absolute;
+		top: 0;
+		width: 275px;
+		right: 0;
+		height: 100%;
+		
+		overflow: hidden;
+	}
+	@media (min-width: 1200px) {
+		width: 325px;
 	}
 }
 #map-filters {
@@ -925,7 +1188,7 @@ p {
 		background-color: transparent;
 		margin: 0;
 		border: none;
-		border-bottom: 1px solid #fff;
+		border-bottom: 1px solid #c4c4c4;
 		border-radius: 0;
 
 		&:nth-of-type(1) .catFilter {border-left: 5px solid #506b99;}
@@ -938,22 +1201,34 @@ p {
 	.panel-collapse {
 		background-color: #27252c;
 		padding-bottom: 15px;
-		max-height: 168px;
-		overflow: auto;
-
+		
+		@media (min-width: 600px) {
+			max-height: 300px;
+			overflow: auto;
+		}
+		@media (min-width: 992px) {
+			max-height: 189px;
+		}
+		@media (min-width: 1200px) {
+			max-height: 288px;
+		}
 		li {
-			padding: 0 30px;
+			padding: 0px 25px;
+			@media (min-width: 992px) {
+				padding: 0 30px;
+			}
+			
 
 			&:last-child a {border-bottom: none;}
 		}
 		a {
-			color: #fff;
+			color: $bglgrey;
 			padding: 15px 0;
 			display: block;
 			font-family: $gotham-r;
 			text-transform: uppercase;
 			font-size: 12px;
-			border-bottom: 1px solid #fff;
+			border-bottom: 1px solid #666666;
 			cursor: pointer;
 
 			&:hover {
@@ -969,11 +1244,13 @@ p {
 	.catFilter {
 		display: block;
 		text-transform: uppercase;
-		padding: 25px;
+		padding: 12px 25px;
 		border-top: 1px solid #fff;
-		font-family: $gotham-m;
+		font-family: $gotham-r;
 		cursor: pointer;
-
+		@media (min-width: 992px) {
+			padding: 15px 25px;
+		}
 		&:first-child {border-top: none;}
 	}
 
@@ -999,8 +1276,6 @@ p {
 			color: $light-orange;
 		}
 		h3 {
-			font-family: $mercury-i;
-			font-size: 30px;
 			color: $light-orange;
 		}
 	}
@@ -1010,11 +1285,11 @@ p {
 		p, p a {
 			color: #fff;
 			a {
-
+				text-decoration: underline;
 			}
 		}
 		.border-vline {
-			border-color: #fff;
+			border-color: #e9dad0;
 			@media screen and (max-width: 767px) {
 				border-left: none;
 			}
@@ -1022,20 +1297,34 @@ p {
 	}
 	.request-info {
 		background-color: #f3f3f3;
-		padding: 70px 0 90px;
+		padding: 20px 0 45px;
+		@media (min-width: 992px) {
+			padding: 55px 0 60px;
+		}
+		.hr {
+			margin: 20px auto 50px;
+		}
+		
 
 		h2 {font-family: $mercury-i;}
 		label {
 			font-weight: normal;
 			font-family: $gotham-r;
 		}
+
+		.form {
+			max-width: 700px;
+			margin: 0 auto;
+			padding: 0px 15px;
+		}
+
 		input[type="text"],
 		textarea {
 			width: 100%;
 			border: none;
 			font-family: $gotham-m;
-			padding: 12px;
-			margin-bottom: 30px;
+			padding: 10px;
+			margin-bottom: 18px;
 		}
 		input[type="checkbox"] {
 			position: absolute;
@@ -1045,7 +1334,7 @@ p {
 			background-color: initial;
 			padding: 10px 50px;
 			transition: all .4s;
-
+			margin-top: 25px;
 			&:hover {
 				background-color: #000;
 				transition: all .4s;
@@ -1064,6 +1353,7 @@ p {
 			}
 		}
 		.checkbox-label {
+			font-size: 12px;
 			padding-left: 15px;
 			@media screen and (max-width: 991px) {
 				padding-left: 30px;
@@ -1091,7 +1381,7 @@ p {
 			letter-spacing: initial;
 		}
 		hr {
-			border-color: $almost-black;
+			border-color: #6c6d70;
 		}
 		p.text-center {
 			padding: 5px 0 15px;
@@ -1105,16 +1395,15 @@ p {
 
 #views {
 	.intro {
-		padding: 50px 0 90px;
 		background-color: #f3f3f3;
-		h3 {
-			font-family: $mercury-i;
-			font-size: 30px;
-		}
+
 	}
 	.info {
 
 		margin-bottom: 25px;
+		@media (min-width: 768px) {
+			padding: 20px 0 5px;
+		}
 
 		h4 {
 			font-family: $mercury-i;
@@ -1125,37 +1414,32 @@ p {
 			&:after {
 				content: '';
 				display: inline-block;
-				width: 150px;
+				width: 35px;
 				height: 1px;
 				background-color: $almost-black;
 				vertical-align: middle;
 				margin: 0 10px;
-				@media screen and (max-width: 479px) {
-					width: 40px;
-				}
-				@media screen and (max-width: 767px) {
+				@media screen and (min-width: 600px) {
 					width: 100px;
 				}
+				@media (min-width: 992px) {
+					width: 150px;
+				} 
 			}
 		}
 		.h-align {
 			display: flex;
 			justify-content: center;
 		}
-		.info-link {
-			@media screen and (max-width: 479px) {
-				width: auto;
-				font-size: 10px;
-			}
-			@media screen and (max-width: 767px) {
-				width: 140px;
-				padding: 10px 0;
-				font-size: 12px;
-			}
-		}
+
 	}
 	.panorama-links {
-
+			li {
+				padding: 0px 2px;
+				@media (min-width: 768px) {
+					padding: 0px 5px;
+				}
+			}
 		li:first-child a:before,
 		li:last-child a:before {
 			content: '';
@@ -1166,26 +1450,47 @@ p {
 			background-color: #000;
 			top: -31px;
 			right: 97px;
+			@media (min-width: 992px) {
+
+			}
 		}
 		li:first-child a:before {
-			right: 16px;
-			@media screen and (max-width: 767px) {
+			right: 20px;
+			@media screen and (min-width: 600px) {
+				right: 82px;
+			} 
+			@media screen and (min-width: 768px) {
 				right: 77px;
+			} 
+			@media screen and (min-width: 992px) {
+				right: 107px;
 			}
 		}
 		li:last-child a:before {
-			right: 33px;
+			right: 20px;
 			@media screen and (min-width: 600px) {
-				right: 52px;
+				right: 46px;
 			}
 			@media screen and (min-width: 768px) {
-				right: 92px;
+				right: 52px;
+			}
+			@media screen and (min-width: 992px) {
+				right: 62px;
 			}
 		}
-		.info-link {
-			width: 200px;
-			margin-top: 0;
-			position: relative;
+		a.info-link {
+			display: inline-block;
+		    margin-top: 0;
+		    position: relative;
+		    padding: 10px 16px;
+		    font-size: 10px;
+		    @media (min-width: 600px) {
+		    	width: 140px;
+		    }
+		    @media (min-width: 992px) {
+		    	width: 180px;
+		    	font-size: 12px;
+		    }
 		}
 		a.active {
 			color: #fff;
@@ -1194,10 +1499,21 @@ p {
 		a:focus {text-decoration: none;}
 	}
 	.panorama {
-		height: 650px;
+		height: 250px;
 		width: 100%;
 		display: block !important;
-
+		@media (min-width: 480px) {
+			height: 350px
+		}
+		@media (min-width: 600px) {
+			height: 450px
+		}
+		@media (min-width: 992px) {
+			height: 550px;
+		}
+		@media (min-width: 1200px) {
+			height: 650px;
+		}
 		.arrow-left,
 		.arrow-right {
 			margin: -23px 0 0;
@@ -1242,6 +1558,9 @@ p {
 	@media (min-width: 1200px) {
 		padding: 50px 0px;
 	}
+	.container {
+		max-width: 850px;
+	}
 	h3, h4 {
 		font-family: $mercury-i;
 	}
@@ -1267,6 +1586,7 @@ p {
 	.hr {
 		height: 1px;
 		background-color: #a39c9a;
+		margin: 20px auto;
 	}
 	p {
 		line-height: 1.6;
@@ -1277,15 +1597,13 @@ p {
 	}
 	a {
 		color: $almost-black;
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	.border-vline {
 		border-left: 1px solid;
 	}
 	.social {
-		@media (min-width: 768px){
-			margin-top: 15px;
-		}
+		margin-top: 15px;
 		@media (min-width: 992px) {
 			margin-top: 25px;
 		}
@@ -1361,92 +1679,6 @@ footer {
 
 
 
-#home,
-#amenities,
-#features {
-
-	.intro {
-		
-		width: 100%;
-
-		h2 {
-			color: $light-orange;
-			border-bottom: 2px solid;
-			display: inline;
-			font-size: 34px;
-			font-family: $gotham-r;
-			text-transform: uppercase;
-			line-height: 1.5;
-			@media (min-width: 768px) and (max-width: 991px) {
-				font-size: 28px;
-			}
-		}
-		.intro-logo {
-			margin: 40px 0 30px;
-			img {
-				margin: auto;
-				@media (min-width: 768px) {
-					max-width: 415px;
-				}
-				@media (min-width: 992px) {
-					max-width: 100%;
-				}
-
-			}
-		}
-		h3 {
-			color: $light-orange;
-			font-family: $mercury-i;
-			font-size: 33px;
-			@media (min-width: 768px) and (max-width: 991px) {
-				font-size: 27px;
-			}
-		}
-	}
-	.intro-desc {
-		background-color: $gray;
-		padding: 55px 0;
-		@media screen and (max-width: 767px) {
-			padding: 28px 0px;
-		}
-		@media screen and (max-width: 991px) {
-			padding: 30px 0 40px;
-		}
-		p {
-			color: #6c6d70;
-		}
-	}
-	.info {
-
-		.img, .description {
-			padding: 0;
-		}
-		.description {
-			margin-top: 50px;
-			.box-text {
-				max-width: 215px;
-				margin: 0 auto; 
-				h3 {
-					max-width: 190px;
-					margin: 0 auto;
-				}
-			}
-		}
-		img {
-			width: 100%;
-		}
-		h3 {
-			font-family: $mercury-i;
-			font-size: 28px;
-			color: $almost-black;
-			margin-top: 0;
-		}
-		p {
-			color: $almost-black;
-		}
-	}
-}
-
 
 .info, .v-align {
 	@media screen and (min-width: 768px) {
@@ -1505,7 +1737,10 @@ a {
 	height: 2px;
 	width: 50px;
 	background: $almost-black;
-	margin: 20px auto;
+	margin: 10px auto;
+	@media (min-width: 600px) {
+		margin: 20px auto;
+	}
 	@media (min-width: 768px) {
 		margin: 25px auto;
 		width: 57px;

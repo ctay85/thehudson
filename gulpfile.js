@@ -10,10 +10,7 @@ var gulp = require('gulp'),
 gulp.task('sass', function () {
   return gulp.src('./css/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
+    .pipe(autoprefixer())
     .pipe(cssmin())
     .pipe(gulp.dest('./css'));
 });
