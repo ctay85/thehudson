@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>The Hudson - Neighborhood</title>
+
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/lightbox.min.css">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+	</head>
+	<body>
+		<header>
+			<div id="top-line" class="clearfix container-fluid hidden-sm hidden-xs">
+				<ul class="list-unstyled list-inline">
+					<li><a href="#">availability</a></li>
+					<li><a href="#">residents</a></li>
+					<li><a href="#">apply now</a></li>
+				</ul>
+			</div>
+
+			<nav class="navbar">
+				<div class="logo-sm text-center hidden-md hidden-lg">
+					<a href="index.html">
+						<img src="img/logo.png" alt="The Hudson">
+					</a>
+				</div>
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<div class="responsive-nav">
+							<ul class="nav navbar-nav">
+								<li><a href="gallery.html">gallery</a></li>
+								<li><a href="amenities.html">amenities</a></li>
+								<li><a href="features.html">features</a></li>
+								<li><a href="#">floor plans</a></li>
+							</ul>
+							<a class="navbar-brand hidden-xs hidden-sm" href="index.html">
+								<img src="img/logo.png" alt="The Hudson">
+							</a>
+							<ul class="nav navbar-nav">
+								<li><a href="neighborhood.html" class="active">neighborhood</a></li>
+								<li><a href="views.html">360° Views</a></li>
+								<li><a href="contact.html">contact</a></li>
+							</ul>
+						</div>
+						<table class="extended-nav hidden-md hidden-lg">
+							<tr>
+								<td colspan="2"><a href="#">availability</a></td>
+							</tr>
+							<tr>
+								<td><a href="#">residents</a></td>
+								<td><a href="#" class="last">apply now</a></td>
+							</tr>
+						</table>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+		</header>
+
+		<!-- NEIGHBORHOOD PAGE CONTAINER -->
+		<div id="neighborhood">
+
+			<section class="intro">
+				<div class="container">
+
+					<h3 class="text-center">Neighborhood</h3>
+					<div class="text-center">
+						<h2 class="underline">Discover</h2>
+						<br>
+						<h2 class="underline">A rich community</h2>
+					</div>
+					<div id="carousel-amenities-1" class="carousel slide" data-ride="carousel">
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner v-align" role="listbox">
+							<div class="item active">								
+								<div class="row">
+									<div class="img col-md-6">
+										<img src="img/neighborhood-img.jpg" class="img-responsive">
+									</div>
+									<div class="description col-md-6">
+										<div>
+											<h3 class="text-center">Chicago Lorem Ipsum</h3>
+											<div class="hr"></div>
+											<div class="row">
+												<p class="col-md-8 col-md-offset-2 text-center">Tempus accumsan neque gravida. Cras eleifend mi sed magna facilisis auctor.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="item">								
+								<div class="row">
+									<div class="img col-md-6">
+										<img src="img/neighborhood-img.jpg" class="img-responsive">
+									</div>
+									<div class="description col-md-6">
+										<div>
+											<h3 class="text-center">Chicago Lorem Ipsum</h3>
+											<div class="hr"></div>
+											<div class="row">
+												<p class="col-md-8 col-md-offset-2 text-center">Tempus accumsan neque gravida. Cras eleifend mi sed magna facilisis auctor.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					  	<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-amenities-1" role="button" data-slide="prev">
+					    	<div class="arrow-left"></div>
+						</a>
+						<a class="right carousel-control" href="#carousel-amenities-1" role="button" data-slide="next">
+					    	<div class="arrow-right"></div>
+						</a>
+					</div>
+
+				</div>
+			</section>
+
+			<section>
+				<div class="container">
+					<h3 class="text-center">Explore the Communities</h3>
+					<div class="hr"></div>
+					<p class="text-center">Select a category to view places</p>
+				</div>
+			</section>
+
+
+			<div id="neighbourhood-map">
+
+				<div id="map" class="map" scrolling="no" data-map-marker="http://thehudson.jivepromotions.com/dev/img/gmap-logo.png" data-northwest-lat="41.896018" data-northwest-lng="-87.640053">
+
+					<script>
+
+				        var sites = [];
+
+				    </script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Kinmont", 
+							41.895283,
+							-87.639403,
+							16,
+							"<div class='info-box'>Kinmont</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"0"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Kinmont", 
+							41.895283,
+							-87.639403,
+							16,
+							"<div class='info-box'>Kinmont</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"1"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Goddess and the Grocer", 
+							41.898631,
+							-87.642655,  
+							16,
+							"<div class='info-box'>Goddess and the Grocer</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"2"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Eerie Caf&eacute;", 
+							41.894273,
+							-87.642712,
+							16,
+							"<div class='info-box'>Eerie Caf&eacute;</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"3"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Citizen Bar", 
+							41.894169,
+							-87.638178,  
+							16,
+							"<div class='info-box'>Citizen Bar</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"4"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Bernie's Lunch &amp; Supper", 
+							41.894503,
+							-87.636659,
+							16,
+							"<div class='info-box'>Bernie's Lunch &amp; Supper</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"5"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Nacional", 
+							41.894156,
+							-87.637409,
+							16,
+							"<div class='info-box'>Nacional</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"6"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Club Lago", 
+							41.895311,
+							-87.636951,
+							16,
+							"<div class='info-box'>Club Lago</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"7"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Farmhouse", 
+							41.89682,
+							-87.635378,
+							16,
+							"<div class='info-box'>Farmhouse</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"8"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"MK Restaurant", 
+							41.898519,
+							-87.636068,
+							16,
+							"<div class='info-box'>MK Restaurant</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"9"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Kiki's Bistro", 
+							41.899222,
+							-87.636108,
+							16,
+							"<div class='info-box'>Kiki's Bistro</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"10"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Yolk River North", 
+							41.896242,
+							-87.633822,
+							16,
+							"<div class='info-box'>Yolk River North</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"11"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"GT Prime", 
+							41.895049,
+							-87.633984,
+							16,
+							"<div class='info-box'>GT Prime</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"12"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Prosecco", 
+							41.895204,
+							-87.634464,
+							16,
+							"<div class='info-box'>Prosecco</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"13"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"The Boarding House", 
+							41.895435,
+							-87.63446,
+							16,
+							"<div class='info-box'>The Boarding House</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"14"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Patrons Hacienda", 
+							41.894189,
+							-87.636377,
+							16,
+							"<div class='info-box'>Patrons Hacienda</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"15"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"The Franklin Room", 
+							41.894424,
+							-87.635467,
+							16,
+							"<div class='info-box'>The Franklin Room</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"16"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Union Sushi + Barbeque Bar", 
+							41.894205,
+							-87.635378,
+							16,
+							"<div class='info-box'>Union Sushi + Barbeque Bar</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"17"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Club Lago", 
+							41.895311,
+							-87.636951,
+							16,
+							"<div class='info-box'>Club Lago</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"18"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Caf&eacute; Iberico", 
+							41.896003,
+							-87.632422,
+							16,
+							"<div class='info-box'>Caf&eacute; Iberico</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"19"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"ZED451", 
+							41.89598,
+							-87.630909,
+							16,
+							"<div class='info-box'>ZED451</div>",
+							"dining",
+							"http://thehudson.jivepromotions.com/dev/img/dining.png",
+							"20"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Luminaire", 
+							41.895331,
+							-87.636063,
+							16,
+							"<div class='info-box'>Luminaire</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"21"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Blake", 
+							41.896873,
+							-87.634761,
+							16,
+							"<div class='info-box'>Blake</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"22"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Trunk Club", 
+							41.892179,
+							-87.636655,
+							16,
+							"<div class='info-box'>Trunk Club</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"23"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Saks Fifth Avenue", 
+							41.895234,
+							-87.624688,
+							16,
+							"<div class='info-box'>Saks Fifth Avenue</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"24"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Ralph Lauren", 
+							41.896496,
+							-87.624596,
+							16,
+							"<div class='info-box'>Ralph Lauren</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"25"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Banana Republic", 
+							41.896281,
+							-87.624678,
+							16,
+							"<div class='info-box'>Banana Republic</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"26"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Anthropologie", 
+							41.896534,
+							-87.625097,
+							16,
+							"<div class='info-box'>Anthropologie</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"27"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Giorgio Armani Boutique", 
+							41.897064,
+							-87.62532,
+							16,
+							"<div class='info-box'>Giorgio Armani Boutique</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"28"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Tiffany &amp; Co.", 
+							41.895922,
+							-87.624669,
+							16,
+							"<div class='info-box'>Tiffany &amp; Co.</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"29"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Water Tower Place", 
+							41.897968,
+							-87.623559,
+							16,
+							"<div class='info-box'>Water Tower Place</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"30"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Bloomingdale's", 
+							41.899573,
+							-87.624826,
+							16,
+							"<div class='info-box'>Bloomingdale's</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"31"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Nordstrom", 
+							41.891301,
+							-87.626031,
+							16,
+							"<div class='info-box'>Nordstrom</div>",
+							"shopping",
+							"http://thehudson.jivepromotions.com/dev/img/shopping.png",
+							"32"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Parliament", 
+							41.89684,
+							-87.636805,
+							16,
+							"<div class='info-box'>Parliament</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"33"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Headquarters Beercade", 
+							41.897199,
+							-87.635207,
+							16,
+							"<div class='info-box'>Headquarters Beercade</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"34"
+						]);
+					</script>
+
+					<script type="text/javascript">
+						sites.push([
+							"Spybar", 
+							41.893703,
+							-87.635866,
+							16,
+							"<div class='info-box'>Spybar</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"35"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Soundbar", 
+							41.89343,
+							-87.63539,
+							16,
+							"<div class='info-box'>Soundbar</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"36"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Lite Chicago Night Club", 
+							41.892943,
+							-87.634843,
+							16,
+							"<div class='info-box'>Lite Chicago Night Club</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"37"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Underground Wonder Bar", 
+							41.8952,
+							-87.631544,
+							16,
+							"<div class='info-box'>Underground Wonder Bar</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"38"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Vertigo Sky Lounge", 
+							41.894206,
+							-87.628455,
+							16,
+							"<div class='info-box'>Vertigo Sky Lounge</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"39"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Underground", 
+							41.890985,
+							-87.630112,
+							16,
+							"<div class='info-box'>Underground</div>",
+							"entertainment",
+							"http://thehudson.jivepromotions.com/dev/img/entertainment.png",
+							"40"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Bus Route 66", 
+							41.8968425,
+							-87.639022,
+							16,
+							"<div class='info-box'>Bus Route 66</div>",
+							"transportation",
+							"http://thehudson.jivepromotions.com/dev/img/transportation.png",
+							"41"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Chicago Brown Line", 
+							41.8970581,
+							-87.6417042,
+							16,
+							"<div class='info-box'>Chicago Brown Line</div>",
+							"transportation",
+							"http://thehudson.jivepromotions.com/dev/img/transportation.png",
+							"42"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Goddess and the Grocer", 
+							41.898631,
+							-87.642655,
+							16,
+							"<div class='info-box'>Goddess and the Grocer</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"43"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Galleria Market", 
+							41.895815,
+							-87.637569,
+							16,
+							"<div class='info-box'>Galleria Market</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"44"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Abe's Market", 
+							41.894153,
+							-87.639701,
+							16,
+							"<div class='info-box'>Abe's Market</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"45"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"BP Gas", 
+							41.896354,
+							-87.634472,
+							16,
+							"<div class='info-box'>BP Gas</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"46"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Chase Bank", 
+							41.896115,
+							-87.642974,
+							16,
+							"<div class='info-box'>Chase Bank</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"47"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Walgreens", 
+							41.896275,
+							-87.636566,
+							16,
+							"<div class='info-box'>Walgreens</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"48"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Walmart Express", 
+							41.896261,
+							-87.63535,
+							16,
+							"<div class='info-box'>Walmart Express</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"49"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"7-Eleven", 
+							41.893364,
+							-87.640808,
+							16,
+							"<div class='info-box'>7-Eleven</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"50"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Shell Gas Station", 
+							41.896772,
+							-87.637498,
+							16,
+							"<div class='info-box'>Shell Gas Station</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"51"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Bank of America", 
+							41.896284,
+							-87.636687,
+							16,
+							"<div class='info-box'>Bank of America</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"52"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Target", 
+							41.90426,
+							-87.644237,
+							16,
+							"<div class='info-box'>Target</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"53"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Jewel-Osco Pharmacy", 
+							41.904988,
+							-87.639552,
+							16,
+							"<div class='info-box'>Jewel-Osco Pharmacy</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"54"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Whole Foods", 
+							41.89502,
+							-87.629069,
+							16,
+							"<div class='info-box'>Whole Foods</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"55"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"River North Hand Car Wash", 
+							41.895694,
+							-87.637882,
+							16,
+							"<div class='info-box'>River North Hand Car Wash</div>",
+							"conveniences",
+							"http://thehudson.jivepromotions.com/dev/img/conveniences.png",
+							"56"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"David Barton Gym", 
+							41.897518,
+							-87.643978,
+							16,
+							"<div class='info-box'>David Barton Gym</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"57"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Durse Park", 
+							41.873556,
+							-87.63088,
+							16,
+							"<div class='info-box'><h4>Durse Park</h4></div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"58"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Montgomery Park", 
+							41.89351,
+							-87.642235,
+							16,
+							"<div class='info-box'>Montgomery Park</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"59"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Chicago River North Pilates", 
+							41.897183,
+							-87.635237,
+							16,
+							"<div class='info-box'>Chicago River North Pilates</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"60"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Trainology Fitness", 
+							41.896254,
+							-87.636163,
+							16,
+							"<div class='info-box'>Trainology Fitness</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"61"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"Vantage Yacht Club", 
+							41.897518,
+							-87.643978,
+							16,
+							"<div class='info-box'>Vantage Yacht Club</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"62"
+						]);
+					</script>
+					<script type="text/javascript">
+						sites.push([
+							"River North Crossfit", 
+							41.893394,
+							-87.636174,
+							16,
+							"<div class='info-box'>River North Crossfit</div>",
+							"recreation",
+							"http://thehudson.jivepromotions.com/dev/img/recreation.png",
+							"63"
+						]);
+					</script>
+
+				</div> <!-- end #map -->
+
+				<div id="markers">
+
+					<div id="map-filters">
+
+					    <div class="tabs" id="test">
+					        <ul id="viewtabs" class="slider-thumbs list-unstyled">
+					            <li class="panel">
+					            	<div class="catFilter panel-heading accordion-toggle" data-filter-color="#4d4a56" data-filter-name="dining" data-toggle="collapse" data-parent="#viewtabs" href="#dining">
+					            		Dining
+					            	</div>
+					            	<div class="panel-collapse collapse in" id="dining" data-filter-name="dining">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="1">Kinmont</a></li>
+											<li><a class="single-location" data-location-count="2">Goddess and the Grocer</a></li>
+											<li><a class="single-location" data-location-count="3">Eerie Caf&eacute;</a></li>
+											<li><a class="single-location" data-location-count="4">Citizen Bar</a></li>
+											<li><a class="single-location" data-location-count="5">Bernie's Lunch &amp; Supper</a></li>
+											<li><a class="single-location" data-location-count="6">Nacional 27</a></li>
+											<li><a class="single-location" data-location-count="7">Club Lago</a></li>
+											<li><a class="single-location" data-location-count="8">Farmhouse</a></li>
+											<li><a class="single-location" data-location-count="9">MK Restaurant</a></li>
+											<li><a class="single-location" data-location-count="10">Kiki's Bistro</a></li>
+											<li><a class="single-location" data-location-count="11">Yolk River North</a></li>
+											<li><a class="single-location" data-location-count="12">GT Prime</a></li>
+											<li><a class="single-location" data-location-count="13">Prosecco</a></li>
+											<li><a class="single-location" data-location-count="14">The Boarding House</a></li>
+											<li><a class="single-location" data-location-count="15">Patrons Hacienda</a></li>
+											<li><a class="single-location" data-location-count="16">The Franklin Room</a></li>
+											<li><a class="single-location" data-location-count="17">Union Sushi + Barbeque Bar</a></li>
+											<li><a class="single-location" data-location-count="18">Club Lago</a></li>
+											<li><a class="single-location" data-location-count="19">Caf&eacute; Iberico</a></li>
+											<li><a class="single-location" data-location-count="20">ZED451</a></li>
+										</ul>
+									</div>
+					            </li>
+					            
+					            <li class="panel">
+					            	<div class="catFilter panel-heading accordion-toggle collapsed" data-filter-color="#4d4a56" data-filter-name="shopping" data-toggle="collapse" data-parent="#viewtabs" href="#shopping">
+					            		Shopping
+					            	</div>
+					            	<div class="panel-collapse collapse" id="shopping" data-filter-name="shopping">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="21">Luminaire</a></li>
+											<li><a class="single-location" data-location-count="22">Blake</a></li>
+											<li><a class="single-location" data-location-count="23">Trunk Club</a></li>
+											<li><a class="single-location" data-location-count="24">Saks Fifth Avenue</a></li>
+											<li><a class="single-location" data-location-count="25">Ralph Lauren</a></li>
+											<li><a class="single-location" data-location-count="26">Banana Republic</a></li>
+											<li><a class="single-location" data-location-count="27">Anthropologie</a></li>
+											<li><a class="single-location" data-location-count="28">Giorgio Armani Boutique</a></li>
+											<li><a class="single-location" data-location-count="29">Tiffany &amp; Co</a></li>
+											<li><a class="single-location" data-location-count="30">Water Tower Place</a></li>
+											<li><a class="single-location" data-location-count="31">Bloomingdale's</a></li>
+											<li><a class="single-location" data-location-count="32">Nordstrom</a></li>
+										</ul>
+									</div>
+					            </li>
+					            <li class="panel">
+					            	<div class="catFilter panel-heading accordion-toggle collapsed" data-filter-color="#4d4a56" data-filter-name="entertainment" data-toggle="collapse" href="#entertainment" data-parent="#viewtabs">
+					            		Entertainment
+					            	</div>
+					            	<div class="panel-collapse collapse" id="entertainment" data-filter-name="entertainment">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="33">Parliament</a></li>
+											<li><a class="single-location" data-location-count="34">Headquarters Beercade</a></li>
+											<li><a class="single-location" data-location-count="35">Spybar</a></li>
+											<li><a class="single-location" data-location-count="36">Soundbar</a></li>
+											<li><a class="single-location" data-location-count="37">Lite Chicago Night Club</a></li>
+											<li><a class="single-location" data-location-count="38">Underground Wonder Bar</a></li>
+											<li><a class="single-location" data-location-count="39">Vertigo Sky Lounge</a></li>
+											<li><a class="single-location" data-location-count="40">Underground</a></li>
+										</ul>
+									</div>
+					            </li>
+					            <li class="panel">
+					            	<div class="catFilter panel-heading accordion-toggle collapsed" data-filter-color="#4d4a56" data-filter-name="transportation" data-toggle="collapse" href="#transportation" data-parent="#viewtabs">
+					            		Transportation
+					            	</div>
+					            	<div class="panel-collapse collapse" id="transportation" data-filter-name="transportation">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="41">Bus 66 Route</a></li>
+											<li><a class="single-location" data-location-count="42">Chicago Brown Line Station</a></li>
+										</ul>
+									</div>
+					            </li>
+					            <li class="panel">
+					            	<div class="catFilter panel-heading accordion-toggle collapsed" data-filter-color="#4d4a56" data-filter-name="conveniences" data-toggle="collapse" href="#conveniences" data-parent="#viewtabs">
+					            		Conveniences
+					            	</div>
+					            	<div class="panel-collapse collapse" id="conveniences" data-filter-name="conveniences">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="43">Goddess and the Grocer</a></li>
+											<li><a class="single-location" data-location-count="44">Galleria Market</a></li>
+											<li><a class="single-location" data-location-count="45">Abe's Market</a></li>
+											<li><a class="single-location" data-location-count="46">BP Gas</a></li>
+											<li><a class="single-location" data-location-count="47">Chase Bank</a></li>
+											<li><a class="single-location" data-location-count="48">Walgreens</a></li>
+											<li><a class="single-location" data-location-count="49">Walmart Express</a></li>
+											<li><a class="single-location" data-location-count="50">7-Eleven</a></li>
+											<li><a class="single-location" data-location-count="51">Shell Gas Station</a></li>
+											<li><a class="single-location" data-location-count="52">Bank of America ATM</a></li>
+											<li><a class="single-location" data-location-count="53">Target</a></li>
+											<li><a class="single-location" data-location-count="54">Jewel-Osco Pharmacy</a></li>
+											<li><a class="single-location" data-location-count="55">Whole Foods</a></li>
+											<li><a class="single-location" data-location-count="56">River North Hand Car Wash</a></li>
+										</ul>
+									</div>
+					            </li>
+					            <li class="panel">					            	
+					            	<div class="catFilter panel-heading accordion-toggle collapsed" data-filter-color="#4d4a56" data-filter-name="recreation" data-toggle="collapse" href="#recreation" data-parent="#viewtabs">
+					            		Recreation
+					            	</div>
+					            	<div class="panel-collapse collapse" id="recreation" data-filter-name="recreation">
+										<ul class="list-unstyled">
+											<li><a class="single-location" data-location-count="57">David Barton Gym</a></li>
+											<li><a class="single-location" data-location-count="58">Durse Park</a></li>
+											<li><a class="single-location" data-location-count="59">Montgomery Park</a></li>
+											<li><a class="single-location" data-location-count="60">Chicago River North Pilates</a></li>
+											<li><a class="single-location" data-location-count="61">Trainology Fitness</a></li>
+											<li><a class="single-location" data-location-count="62">Vantage Yacht Club</a></li>
+											<li><a class="single-location" data-location-count="63">River North Crossfit</a></li>
+										</ul>
+									</div>
+					            </li>
+					        </ul>
+					    </div>
+
+					</div> <!-- end #map-filters -->
+				</div> <!-- end #markers -->
+				<div class="h-align">
+					<div class="walk-score">
+						<h4>95</h4>
+						<div class="hr xs"></div>
+						<p>Walk Score</p>
+					</div>
+					<div class="transit-score">
+						<h4>91</h4>
+						<div class="hr xs"></div>
+						<p>Transit Score</p>
+					</div>
+				</div>
+			</div>
+
+		</div> <!-- end #home -->
+
+		<!-- CONTACT US -->
+		<section class="contact-us">
+			<h3 class="text-center">Contact Us</h3>
+			<div class="hr"></div>
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-sm-4 col-md-4">
+						<h4>Leasing Hours</h4>
+						<p>Mon-Fri 9am-6pm <br> Sat 10am-5pm <br> Sun 12-4pm</p>
+					</div>
+					<div class="hr hidden-sm hidden-md hidden-lg"></div>
+					<div class="col-sm-4 col-md-4 border-vline">
+						<h4>General Inquiries</h4>
+						<p> T: <a href="tel:312-883-0776">312.883.0776</a> <br> 
+							E: <a href="mailto:TheHudson@onni.com">TheHudson@onni.com</a>
+						</p>
+					</div>
+					<div class="hr hidden-sm hidden-md hidden-lg"></div>
+					<div class="col-sm-4 col-md-4 border-vline">
+						<h4>The Hudson</h4>
+						<p><a href="#">750 North Hudson Avenue <br> Chicago,IL 60654</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="social text-center">
+				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+			</div>
+		</section>
+
+		<!-- GO TO TOP LINK -->
+		<section class="go-top text-center">
+			<a>Back to Top</a>
+		</section>
+
+		<footer>
+			<div class="text-center container">
+				<div class="developed-by">Developed by <img src="img/footer-logo.png" alt="Onni"></div>
+				<div class="hr"></div>
+				<div class="clearfix">
+					<p class="col-md-6 col-md-offset-3">The developer reserves the right to make minor modifications to building design, specifications and floor plans should they be necessary to maintain the high standards of this community. Square footage are based on preliminary measurements and are approximate. E & O.E.</p>
+				</div>
+				<div class="copyright">© 2016 The Hudson</div>
+			</div>
+		</footer>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/lightbox.min.js"></script>
+		<script src="js/jquery.panorama360.js"></script>
+		<script src="js/app.js"></script>
+		<!--<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDvHYB_mCx6oY9J2facTj91gOODvAbeCE&callback=initMap">
+	    </script>-->
+
+		<script src="js/acf-maps.js"></script>
+		<script src="js/neighbourhoods.js"></script>
+	</body>
+</html>

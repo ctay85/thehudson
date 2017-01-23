@@ -1,0 +1,8 @@
+#markers {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+#map-filters .panel-collapse {
+	max-height: 168px;
+	overflow: auto;
+}
