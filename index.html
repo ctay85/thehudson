@@ -19,8 +19,8 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
-		<header>
+	<body class="home">
+		<header id="header">
 			<div id="top-line" class="clearfix container-fluid hidden-sm hidden-xs">
 				<ul class="list-unstyled list-inline">
 					<li><a href="#">availability</a></li>
@@ -37,14 +37,7 @@
 				</div>
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
+					
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,6 +67,16 @@
 							</tr>
 						</table>
 					</div><!-- /.navbar-collapse -->
+
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+
 				</div><!-- /.container-fluid -->
 			</nav>
 		</header>
@@ -83,9 +86,7 @@
 
 			<section class="intro">
 				<div class="text-center">
-					<h2>Luxury</h2>
-					<br>
-					<h2>Rental Apartments</h2>
+					<h2>Luxury <br />Rental Apartments</h2>
 				</div>				
 				<h1 class="intro-logo">
 					<img src="img/intro-logo.png" alt="The Hudson by Onni" class="img-responsive hidden-xs">
@@ -96,10 +97,10 @@
 
 			<section class="intro-desc text-center">
 				<div class="container">
-					<h3>Introducing Chicago's <br> Newest Boutique Rental Tower</h3>
-					<div class="hr"></div>
-					<div class="clearfix">
-						<p class="col-md-6 col-md-offset-3">Chicago's newest boutique rental tower. This 25-story development in Chicago's River North District, features distinctively designed homes that offer residents a new level of luxury. Functional floorplans are complemented by a private balcony in every home, providing fresh outdoor living. Enjoy the best of everything with unparalleled amenities, designer interiors, and unobstructed views.</p>
+					<div class="box-text">
+						<h3>Introducing Chicago's <br> Newest Boutique Rental Tower</h3>
+						<div class="hr"></div>
+						<p>Chicago's newest boutique rental tower. This 25-story development in Chicago's River North District, features distinctively designed homes that offer residents a new level of luxury. Functional floorplans are complemented by a private balcony in every home, providing fresh outdoor living. Enjoy the best of everything with unparalleled amenities, designer interiors, and unobstructed views.</p>
 					</div>
 				</div>
 			</section>
@@ -110,11 +111,12 @@
 				    <source src="750NHudson-ONNI-Video.webm" type='video/webm'>
 				</video>
 				<div class="video-controls">
-					<div>
+					<div><a>
 						<div class="video-icon"></div>
 						<p class="text-center">
-							<a>play video</a>
+							play video
 						</p>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -134,10 +136,12 @@
 							<img src="img/amenities-img.jpg" class="img-responsive">
 						</div>
 						<div class="description text-center col-sm-6 col-md-6">
-							<h3>Lorem Ipsum <br> Dolor Sit Amet</h3>
-							<div class="hr"></div>
-							<p>Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</p>
-							<a href="amenities.html" class="info-link">View amenities</a>
+							<div class="box-text">
+								<h3>Lorem Ipsum Dolor Sit Amet</h3>
+								<div class="hr"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="amenities.html" class="info-link">View amenities</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -148,10 +152,12 @@
 							<img src="img/features-img.jpg" class="img-responsive">
 						</div>
 						<div class="description text-center col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6">
-							<h3>Lorem Ipsum <br> Dolor Sit Amet</h3>
-							<div class="hr"></div>
-							<p>Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</p>
-							<a href="features.html" class="info-link">view features</a>
+							<div class="box-text">
+								<h3>Lorem Ipsum Dolor Sit Amet</h3>
+								<div class="hr"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="features.html" class="info-link">view features</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -162,10 +168,12 @@
 							<img src="img/floorplans-img.jpg" class="img-responsive">
 						</div>
 						<div class="description text-center col-sm-6 col-md-6">
-							<h3>Lorem Ipsum <br> Dolor Sit Amet</h3>
-							<div class="hr"></div>
-							<p>Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</p>
-							<a href="#" class="info-link">View floorplans</a>
+							<div class="box-text">
+								<h3>Lorem Ipsum Dolor Sit Amet</h3>
+								<div class="hr"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="#" class="info-link">View floorplans</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -176,10 +184,12 @@
 							<img src="img/neighborhood-img.jpg" class="img-responsive">
 						</div>
 						<div class="description text-center col-sm-6 col-sm-pull-6 col-md-6 col-md-pull-6">
-							<h3>Lorem Ipsum <br> Dolor Sit Amet</h3>
-							<div class="hr"></div>
-							<p>Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</p>
-							<a href="neighborhood.html" class="info-link">view neighborhood</a>
+							<div class="box-text">
+								<h3>Lorem Ipsum Dolor Sit Amet</h3>
+								<div class="hr"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="neighborhood.html" class="info-link">view neighborhood</a>
+							</div>
 						</div>
 					</div>			
 				</div>
@@ -190,10 +200,12 @@
 							<img src="img/browse-360-img.jpg" class="img-responsive">
 						</div>
 						<div class="description text-center col-sm-6 col-md-6">
-							<h3>Lorem Ipsum <br> Dolor Sit Amet</h3>
-							<div class="hr"></div>
-							<p>Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit.</p>
-							<a href="views.html" class="info-link">browse 360° view</a>
+							<div class="box-text">
+								<h3>Lorem Ipsum Dolor Sit Amet</h3>
+								<div class="hr"></div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+								<a href="views.html" class="info-link">browse 360° view</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -271,7 +283,7 @@
 				<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				<a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-				<a href="#"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+				<a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
 			</div>
 		</section>
 
@@ -282,12 +294,14 @@
 
 		<footer>
 			<div class="text-center container">
+				<div class="box-text">
 				<div class="developed-by">Developed by <img src="img/footer-logo.png" alt="Onni"></div>
 				<div class="hr"></div>
-				<div class="clearfix">
-					<p class="col-md-6 col-md-offset-3">The developer reserves the right to make minor modifications to building design, specifications and floor plans should they be necessary to maintain the high standards of this community. Square footage are based on preliminary measurements and are approximate. E & O.E.</p>
+				
+					<p>The developer reserves the right to make minor modifications to building design, specifications and floor plans should they be necessary to maintain the high standards of this community. Square footage are based on preliminary measurements and are approximate. E&amp;O.E.</p>
+				
+				<div class="copyright">&copy; 2016 The Hudson</div>
 				</div>
-				<div class="copyright">© 2016 The Hudson</div>
 			</div>
 		</footer>
 
