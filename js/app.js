@@ -23,7 +23,7 @@ $(document).ready(function (){
 	// Calculate height for mobile menu
 	$(window).resize(function(){
 		if ($(window).width() < 992) {
-			$(".responsive-nav").css("height", $(window).height()-274);
+			$(".responsive-nav").css("height", $(window).height()-216);
 			console.log($(window).height());
 		} if ($(window).width() > 991) {
 			if ($(".responsive-nav").css("height") != '0px') {

@@ -1,9 +1,43 @@
 @font-face {
-    font-family: "Mercury Display Italic";
-    src: url(../fonts/MercuryDisplayItalic.eot),
-        url(../fonts/MercuryDisplayItalic.woff),
-        url(../fonts/MercuryDisplayItalic.woff2);
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?4zv2fk');
+  src:  url('../fonts/icomoon.eot?4zv2fk#iefix') format('embedded-opentype'),
+	    url('../fonts/icomoon.ttf?4zv2fk') format('truetype'),
+	    url('../fonts/icomoon.woff?4zv2fk') format('woff'),
+	    url('../fonts/icomoon.svg?4zv2fk#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\e900";
+}
+.icon-twitter:before {
+  content: "\e901";
+}
+.icon-wechat:before {
+  content: "\e902";
+}
+.icon-instagram:before {
+  content: "\ea92";
+}
+
+ 
 @font-face {
     font-family: "Gotham Book Italic";
     src: url(../fonts/GothamBookItalic.eot),
@@ -22,19 +56,21 @@
         url(../fonts/GothamMedium.woff),
         url(../fonts/GothamMedium.woff2);
 }
-@font-face {
-    font-family: fa;
-    src: url(../fonts/FontAwesome.otf);
-}
 
 $gray: #e9e9e9;
 $light-orange: #dcc4b5;
 $almost-black: #27252b;
 
-$mercury-i: "Mercury Display Italic";
+.mercury {
+	font-family: "MercuryDisplayItalic";
+	font-weight: normal;
+	font-style: italic;
+}
+
+$mercury-i: "MercuryDisplayItalic"; 
 $gotham-i: "Gotham Book Italic";
 $gotham-r: "Gotham Book Regular";
-$gotham-m: "Gotham Medium";
+$gotham-m: "Gotham Medium"; 
 
 /*** COLOURS ***/
 
@@ -143,7 +179,7 @@ h3 {
 
 }
 
-
+/*html, body, #page, #home, .intro {height: 100%;}*/ 
 
 #home,
 #amenities,
@@ -180,7 +216,8 @@ h3 {
 		}
 		h3 {
 			color: $light-orange;
-			font-family: $mercury-i;
+			@extend .mercury;
+			font-style: italic;
 			font-size: 33px;
 			@media (min-width: 768px) and (max-width: 991px) {
 				font-size: 27px;
@@ -224,7 +261,7 @@ h3 {
 			width: 100%;
 		}
 		h3 {
-			font-family: $mercury-i;
+			@extend .mercury;
 			font-size: 28px;
 			color: $almost-black;
 			margin-top: 0;
@@ -240,6 +277,25 @@ h3 {
 /* ################################## HEADER STYLES ################################## */
 
 header {
+	@media (min-width: 992px) {
+		position: fixed;
+		width: 100%;
+		background-color: #fff;
+		z-index: 1;
+	}	
+
+	&.fixed {
+		.nav a {
+
+			@media (min-width: 992px) and (max-width: 1199px) {
+				padding: 35px 10px !important;
+			}
+			@media (min-width: 1200px) {
+				padding: 35px 19px !important;
+			}
+		}
+	}
+
 	#top-line {
 		background: #27252c;
 		text-transform: uppercase;
@@ -277,32 +333,49 @@ header {
 			color: #27252c;
 			font-family: $gotham-m;
 			padding: 20px 15px;
+			transition: none;
 			@media screen and (min-width: 600px) {
+				padding: 50px 10px;
+				transition: none;
+			}
+			@media screen and (min-width: 992px) {
 				padding: 35px 10px;
+				transition: none;
 			}
 			@media (min-width: 1200px) {
-				padding: 35px 15px;
+				padding: 35px 19px;
 			}
 			&.active:after {
+				content: '';
+				display: block;
+				height: 2px;
+				background: $almost-black;
+				position: absolute;
+				@media screen and (min-width: 1200px) { 
+					width: calc(100% - 38px);
+				}
 				@media screen and (min-width: 992px) and (max-width: 1199px) {
 					width: calc(100% - 20px);
-					content: '';
-					display: block;
-					height: 2px;
-					background: $almost-black;
-					position: absolute;
 				}
-				@media screen and (min-width: 1200px) { 
-					width: calc(100% - 30px);
-				}
-			}
-			&.active {
-				
 			}
 
 		}
+		li:hover a:after {
+			content: '';
+			display: inline-block;
+			height: 2px;
+			background: $almost-black;
+			position: absolute;
+			@media screen and (min-width: 1200px) { 
+				width: calc(100% - 38px);
+			}
+			@media screen and (min-width: 992px) and (max-width: 1199px) {
+				width: calc(100% - 20px);
+			}
+		}
 		>li>a:hover {
 			background-color: transparent;
+			text-decoration: none;
 			
 		}
 	}
@@ -311,6 +384,7 @@ header {
 		margin-left: 0 !important;
 		height: auto;
 		padding: 19px 45px;
+
 		@media screen and (max-width: 991px) {
 			float: none;
 		}
@@ -380,6 +454,22 @@ header {
 							text-decoration: underline;
 						}
 					}
+					a.active {
+						@media (min-width: 992px) {
+							content: '';
+							display: block;
+							height: 2px;
+						}
+					}
+				}
+				li:hover a:after, li a.active:after
+				 {
+					@media (min-width: 992px) {
+						content: '';
+						display: block;
+						height: 2px;
+					}
+					
 				}
 				&:nth-of-type(2) li:last-child:after {
 					@media screen and (max-width: 991px) {
@@ -405,16 +495,19 @@ header {
 		}
 	}
 	.extended-nav {
-		background-color: $almost-black;
+		background-color: $light-orange;
 		text-align: center;
 		width: 100%;
-
+		z-index: 999;
 		a {
 			text-transform: uppercase;
 			padding: 15px 0;
 			display: block;
-			color: #fff;
+			color: $almost-black;
 			font-family: $gotham-m;
+			@media (min-width: 600px) {
+				padding: 35px 0;
+			}
 			@media (min-width: 992px) {
 				padding: 25px 0;
 			}
@@ -424,7 +517,7 @@ header {
 			}
 			&:hover {
 				text-decoration: none;
-				background-color: #6c6d70;
+				background-color: darken($light-orange,10%);
 				color: #fff;
 			}
 		}
@@ -439,7 +532,7 @@ header {
 }
 
 p {
-	font-size: 12px;
+	font-size: 13px;
 	letter-spacing: 1.2px;
 	font-family: $gotham-r;
 }
@@ -466,37 +559,52 @@ p {
 			background: rgba(255,255,255,0.9);
 			width: 100%;
 		}
+		.navbar-brand {
+			display: none;
+		}
+		.nav a {
+			@media screen and (min-width: 992px) and (max-width: 1199px) {
+				padding: 35px 25px;
+			}
+			@media (min-width: 1200px) {
+				padding: 35px 39px;
+			}
+		}
+		.nav li:hover a:after {
+
+			@media screen and (min-width: 1200px) { 
+				width: calc(100% - 78px);
+			}
+			@media screen and (min-width: 992px) and (max-width: 1199px) {
+				width: calc(100% - 50px);
+			}
+		}
 	}
 	
 
 	#home {
+
 		.intro {
-			background: radial-gradient(circle at center, rgba(0,0,0, .3) 21vh, rgba(0,0,0, 0) 25vh),
-			url(../img/bg.jpg) no-repeat center bottom;
+			background: url(../img/banner-home-sm.jpg) no-repeat center bottom;
 			background-size: cover;
 			padding: 175px 0 0px;
-			@media screen and (min-width: 480px) {
-				background: radial-gradient(circle at center,rgba(0,0,0,.3) 12vh,transparent 18vh),
-				url(../img/bg.jpg) center bottom no-repeat;
-				background-size: cover;
+			@media screen and (min-width: 480px) { 
 				padding: 185px 0 10px;
 			}
 			@media screen and (min-width: 768px) {
-				background: radial-gradient(circle at center,rgba(0,0,0,.3) 17vh,transparent 25vh),
-				url(../img/bg.jpg) center bottom no-repeat;
+				background: url(../img/banner-home.jpg) center bottom no-repeat;
 				background-size: cover;
 				padding: 68px 0 15px;
 			}
 			@media screen and (min-width: 992px) {
-				background: radial-gradient(circle at center,rgba(0,0,0,.3) 17vh,transparent 25vh),
-				url(../img/bg.jpg) center bottom no-repeat;
-				background-size: cover;
-				padding-top: 100px;
+				padding-top: 180px;
 			}
-			@media (min-width: 1200px) {
-				padding-top: 150px;
+			.text-center {
+				@media (max-width: 479px) {
+					max-width: 300px;
+					margin: 0 auto;
+				}
 			}
-	
 			h2 {
 				font-size: 30px;
 				@media screen and (min-width: 480px) {
@@ -529,6 +637,15 @@ p {
 					@media (min-width: 992px) {
 						max-width: 455px;
 					}
+				}
+			}
+			.info-link {
+				color: #000;
+				background-color: $light-orange;
+				border-color: $light-orange;
+				&:hover {
+					background-color: darken($light-orange, 10%);
+					border-color: darken($light-orange, 10%);
 				}
 			}
 		}
@@ -581,7 +698,7 @@ p {
 			}
 
 			h3 {
-				font-family: $mercury-i;
+				@extend .mercury;
 				font-size: 26px;
 				color: $almost-black;
 				margin: 0 auto;
@@ -693,12 +810,11 @@ p {
 				}
 				.box-text {
 					h3 {
-						@media screen and (max-width: 767px) {
-							font-size: 26px;
-						}
-						@media (min-width: 768px) and (max-width: 991px) {
+						font-size: 26px;
+						@media (min-width: 768px) {
 							max-width: 160px;
 							font-size: 22px;
+							margin: 0 auto; 
 						}
 					}
 					.hr {
@@ -740,21 +856,18 @@ p {
 					padding-right: 0px;
 				}
 			}
-			h3 {
-				font-family: $mercury-i;
+			h3 { 
+				@extend .mercury;
 				font-size: 30px;
 				color: $almost-black;
+				max-width: 280px;
+    			margin: 0 auto 30px;
 			}
 			p {
 				margin-bottom: 35px;
 				color: $almost-black;
 			}
-			img {
-				margin: 0px 0px 10px;
-				@media screen and (min-width: 768px) {
-					margin-bottom: 15px;
-				}
-			}
+			
 			.info-link {
 				@media screen and (max-width: 479px) {
 					margin-top: 30px;
@@ -780,6 +893,23 @@ p {
 			@media screen and (min-width: 768px) {
 				margin: 0;
 			}
+			a {
+				display: block;
+				margin-bottom: 8px; 
+				@media (min-width: 768px) {
+					margin: 0px;
+					padding: 5px;
+				}
+				img {
+					width: 100%;
+					margin: 0px;
+				}
+			}
+			.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+				@media (min-width: 768px) {
+					padding: 0px;
+				}
+			}
 		}
 		img {
 			display: block;
@@ -793,6 +923,7 @@ p {
 				transition: all .4s;
 			}
 		} 
+
 	}
 
 
@@ -801,14 +932,14 @@ p {
 #gallery {
 	padding: 10px 0 30px;
 	@media (min-width: 992px) {
-		padding: 50px 0 90px;
+		padding: 141px 0 90px;
 	}
 	.container {
 	}
 
 	h3 {
 		font-size: 24px;
-		font-family: $mercury-i;
+		@extend .mercury;
 		@media (min-width: 992px) {
 			font-size: 30px;
 		}
@@ -823,24 +954,9 @@ p {
 		}
 		
 	}
-	a {
-		display: block;
-		margin-bottom: 8px; 
-		@media (min-width: 768px) {
-			margin: 0px;
-			padding: 5px;
-		}
-		img {
-			width: 100%;
-			margin: 0px;
-		}
-	}
+	
 	.gallery {
-		.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-			@media (min-width: 768px) {
-				padding: 0px;
-			}
-		}
+		
 	}
 	
 	
@@ -853,6 +969,9 @@ p {
 
 
 #amenities, #features, #neighborhood, #views, #contact {
+	@media (min-width: 992px) {
+		padding-top: 141px;
+	}
 	.intro {
 		padding: 20px 0px 50px;
 		@media (min-width: 992px) {
@@ -866,7 +985,7 @@ p {
 		}
 		h3 {
 			font-size: 24px; 
-			font-family: $mercury-i;
+			@extend .mercury;
 			@media (min-width: 992px) {
 				font-size: 28px;
 			}
@@ -888,6 +1007,7 @@ p {
 
 #amenities, #features {
 	.info {
+		padding: 0px;
 		.description {
 			margin: 0px;
 
@@ -1018,6 +1138,12 @@ p {
 			margin: 50px
 		}
 		background-color: #f3f3f3;
+		.col-md-6 {
+			@media (min-width: 768px) {
+				width: 50%;
+
+			}
+		}
 		img {
 			@media screen and (max-width: 767px) {
 				width: 100%;
@@ -1025,13 +1151,18 @@ p {
 		}
 		.description {
 			padding: 10px 0px 65px;
-			@media screen and (min-width: 480px) {
+			@media screen and (min-width: 768px) {
+				padding: 0px; 
+				margin-bottom: 30px;
+			}
+			@media screen and (min-width: 992px) {
 				padding: 35px 0 30px; 
 				margin-bottom: 30px;
 			}
 			.box-text {
 			    margin: auto;
 			    text-align: Center;
+			    padding: 0px 30px;
 			    @media (min-width: 992px) {
 			     max-width: 300px;
 			    }
@@ -1068,7 +1199,7 @@ p {
 		font-family: $gotham-r;
 	}
 	h3 {
-		font-family: $mercury-i;
+		@extend .mercury;
 		font-size: 30px;
 	}
 	.info {
@@ -1076,7 +1207,7 @@ p {
 			display: block;
 		}
 		.box-text {
-			padding: 0px;
+			padding: 0px 15px;
 		}
 	}
 
@@ -1135,7 +1266,7 @@ p {
 	}
 	.walk-score {
 		background-color: #807d87;
-		top: 20px;
+		top: 55px;
 
 		.hr.xs {
 			background-color: #fff;
@@ -1144,7 +1275,7 @@ p {
 		p {color: #fff;}
 	}
 	.transit-score {
-		top: 160px;
+		top: 185px;
 		background-color: #27252c;
 
 		.hr.xs {
@@ -1238,6 +1369,16 @@ p {
 		}
 	}
 }
+
+.gm-style .gm-style-iw {
+	text-align: center;
+	.info-box {
+		color: #ffffff;
+		font-family: $gotham-r;
+	}
+
+}
+
 #viewtabs {
 	margin: 0;
 
@@ -1289,24 +1430,25 @@ p {
 			}
 		}
 		.border-vline {
-			border-color: #e9dad0;
-			@media screen and (max-width: 767px) {
-				border-left: none;
+			border-left: none;
+			
+			@media screen and (min-width: 768px) {
+				border-color: #e9dad0;
 			}
 		}
 	}
 	.request-info {
 		background-color: #f3f3f3;
-		padding: 20px 0 45px;
+		padding: 40px 0 45px;
 		@media (min-width: 992px) {
-			padding: 55px 0 60px;
+			padding: 80px 0 60px;
 		}
 		.hr {
 			margin: 20px auto 50px;
 		}
 		
 
-		h2 {font-family: $mercury-i;}
+		h2 {@extend .mercury;}
 		label {
 			font-weight: normal;
 			font-family: $gotham-r;
@@ -1319,6 +1461,7 @@ p {
 		}
 
 		input[type="text"],
+		select,
 		textarea {
 			width: 100%;
 			border: none;
@@ -1326,9 +1469,12 @@ p {
 			padding: 10px;
 			margin-bottom: 18px;
 		}
+
 		input[type="checkbox"] {
-			position: absolute;
-			opacity: 0;
+		    height: 25px;
+		    width: 25px;
+		    float: left;
+		    margin-right: 13px;
 		}
 		input[type="submit"] {
 			background-color: initial;
@@ -1376,7 +1522,12 @@ p {
 				cursor: pointer;
 			}
 		}
-
+		.help-block {
+			margin-top: -12px;
+		}
+		.bgconsent .help-block {
+			margin-top: 5px;
+		}
 		p {
 			letter-spacing: initial;
 		}
@@ -1385,6 +1536,15 @@ p {
 		}
 		p.text-center {
 			padding: 5px 0 15px;
+			a {
+				color: #333333;
+				&:hover {
+				}
+			}
+		}
+		.g-recaptcha {
+			display: inline-block;
+			margin: 0 auto;
 		}
 	}
 }
@@ -1406,7 +1566,7 @@ p {
 		}
 
 		h4 {
-			font-family: $mercury-i;
+			@extend .mercury;
 			margin: 20px 0 20px;
 			display: inline-block;
 
@@ -1414,16 +1574,16 @@ p {
 			&:after {
 				content: '';
 				display: inline-block;
-				width: 35px;
+				width: 38px;
 				height: 1px;
 				background-color: $almost-black;
 				vertical-align: middle;
 				margin: 0 10px;
 				@media screen and (min-width: 600px) {
-					width: 100px;
+					width: 103px;
 				}
 				@media (min-width: 992px) {
-					width: 150px;
+					width: 152px;
 				} 
 			}
 		}
@@ -1455,27 +1615,27 @@ p {
 			}
 		}
 		li:first-child a:before {
-			right: 20px;
+			right: 23px;
 			@media screen and (min-width: 600px) {
-				right: 82px;
+				right: 85px;
 			} 
 			@media screen and (min-width: 768px) {
-				right: 77px;
+				right: 80px;
 			} 
 			@media screen and (min-width: 992px) {
-				right: 107px;
+				right: 109px;
 			}
 		}
 		li:last-child a:before {
-			right: 20px;
+			right: 17px;
 			@media screen and (min-width: 600px) {
-				right: 46px;
+				right: 43px;
 			}
 			@media screen and (min-width: 768px) {
-				right: 52px;
+				right: 49px;
 			}
 			@media screen and (min-width: 992px) {
-				right: 62px;
+				right: 59px;
 			}
 		}
 		a.info-link {
@@ -1559,10 +1719,10 @@ p {
 		padding: 50px 0px;
 	}
 	.container {
-		max-width: 850px;
+		max-width: 900px;
 	}
 	h3, h4 {
-		font-family: $mercury-i;
+		@extend .mercury;
 	}
 	h4 {
 		margin-bottom: 0px;
@@ -1600,27 +1760,45 @@ p {
 		text-decoration: none;
 	}
 	.border-vline {
-		border-left: 1px solid;
+		@media (min-width: 768px) {
+			border-left: 1px solid; 
+		}		
 	}
 	.social {
 		margin-top: 15px;
-		@media (min-width: 992px) {
+		@media (min-width: 768px) {
 			margin-top: 25px;
+		}
+		@media (min-width: 992px) {
+			margin-top: 35px;
 		}
 		
 		a {
-			padding: 0 15px;
-			font-size: 30px;
-			@media screen and (max-width: 479px) {
-				padding: 0 18px;
-			    font-size: 20px;
-			}
-			@media screen and (max-width: 767px) {
+			padding: 0 10px;
+		    font-size: 18px;
+
+			@media (min-width: 768px) {
 				padding: 0 18px;
 		    	font-size: 22px;
 			}
+			@media (min-width: 992px) {
+				padding: 0 15px;
+			font-size: 30px;
+			}
 			&:hover {
 				color: darken($light-orange, 25%);
+			}
+		}
+		.fair-trade {
+			margin: -10px 10px 0px;
+			width: 27px;
+			@media (min-width: 768px) {
+				width: 32px;
+				margin-top: -16px;
+			}
+			@media (min-width: 992px) {
+				margin: -20px 15px 0px;
+				width: 40px;
 			}
 		}
 	}
@@ -1632,7 +1810,7 @@ p {
 		background-color: #4d4a56;
 		padding: 10px 0;
 		color: #fff;
-		font-family: $mercury-i;
+		@extend .mercury;
 		font-size: 16px;
 		cursor: pointer;
 		@media (min-width: 768px) {
